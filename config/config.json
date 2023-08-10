@@ -1,0 +1,8 @@
+{
+    "DB_USERNAME": "root",
+    "DB_PASSWORD": "santyZ9GZhpLklBFxmEy",
+    "DB_PORT": "5491",
+    "DB_HOST": "containers-us-west-191.railway.app",
+    "DB_NAME": "railway"
+
+}
