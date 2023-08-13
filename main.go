@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	db.Init();
+	db.Init()
 	e := routes.Init()
 
-	e.Logger.Fatal(e.Start(":3000"))
+	e.Logger.Fatal(e.Start(":6361"))
 }
