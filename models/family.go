@@ -45,8 +45,8 @@ func FetchAllFamily() (Response, error) {
 
 }
 func FetchFamilyById(id int) (Response, error) {
-	var obj Hotkeys
-	var arrobj []Hotkeys
+	var obj Family
+	var arrobj []Family
 	var res Response
 
 	con := db.CreateCon()
