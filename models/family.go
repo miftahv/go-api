@@ -44,3 +44,35 @@ func FetchAllFamily() (Response, error) {
 	return res,nil
 
 }
+func FetchFamilyById(id int) (Response, error) {
+	var obj Hotkeys
+	var arrobj []Hotkeys
+	var res Response
+
+	con := db.CreateCon()
+	sqlStatement := "SELECT * FROM families where id=?"
+
+	rows, err := con.Query(sqlStatement, id)
+	if err !=nil {
+		panic(err)
+	}
+	defer rows.Close()
+	if err != nil{
+		return res,err
+	}
+
+	for rows.Next(){
+		err = rows.Scan(&obj.Id, &obj.Name, &obj.Id_sec, &obj.Ischecked)
+		if err != nil {
+			return res,err
+		}
+
+		arrobj = append(arrobj, obj)
+	}
+	res.Status = http.StatusOK
+	res.Message = "Succes"
+	res.Data = arrobj
+
+	return res,nil
+
+}
