@@ -61,7 +61,7 @@ func FetchKategoriById(id int) (Response, error) {
 	}
 
 	for rows.Next(){
-		err = rows.Scan(&obj.Id, &obj.Name, &obj.Id_sec)
+		err = rows.Scan(&obj.Id, &obj.Name, &obj.Id_family)
 		if err != nil {
 			return res,err
 		}
